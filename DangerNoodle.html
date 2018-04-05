@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="1280" height="720"></canvas>
+		<button id='btn'>Start</button>
+		<script>
+			function drawDot() {
+				xPos += xDir;
+				yPos += yDir;
+				if (xPos <= 0 || xPos >= canvas.width || yPos <= 0 || yPos >= canvas.height){
+					clearInterval(timer);
+					alert ("Game Over");
+				};
+				var pixelData = ctx.getImageData(xPos,yPos,1,1).data;
+				console.log(pixelData[0]+"-"+pixelData[1]+"-"+pixelData[2]);
+				if (pixelData[0] == 0) {
+					clearInterval(timer);
+					alert ("Game Over");
+				}
+				if (foodX == xPos && foodY == yPos) {
+					snekLength++;
+					createFood();
+					clearInterval(timer);
+					interval -= 10;
+					timer = setInterval(drawDot, interval);
+				}
+				ctx.fillStyle = "#000000";
+				ctx.fillRect(xPos,yPos,10,10);
+				snek.push({x:xPos,y:yPos});
+				if (snek.length > snekLength){
+					var oldest = snek.shift();
+					ctx.fillStyle = "#bbc1cc";
+					ctx.fillRect(oldest.x, oldest.y, 10, 10);
+				}
+			}
+			
+			function keyDownTextField(e) {
+				switch (e.keyCode) {
+					case 37:
+						xDir = -10;
+						yDir = 0;
+						break;
+					case 38:
+						xDir = 0;
+						yDir = -10;
+						break;
+					case 39:
+						xDir = 10;
+						yDir = 0;
+						break;
+					case 40:
+						xDir = 0;
+						yDir = 10;
+						break;
+				}
+			}
+			
+			function createFood() {
+				foodX = Math.floor(Math.random() * canvas.width / 10) * 10;
+				foodY = Math.floor(Math.random() * canvas.height / 10) * 10;
+				var pixelData = ctx.getImageData(foodX,foodY,1,1).data;
+				while (pixelData[0] == 0) {
+					foodX = Math.floor(Math.random() * canvas.width / 10) * 10;
+					foodY = Math.floor(Math.random() * canvas.height / 10) * 10;
+					pixelData = ctx.getImageData(foodX,foodY,1,1).data;
+				}
+				ctx.fillStyle = "#FF0000";
+				ctx.fillRect(foodX,foodY,10,10);
+			}
+
+			var foodX;
+			var foodY;
+			var snek = [];
+			var snekLength = 3;
+			var canvas = document.getElementById("myCanvas");
+			var ctx = canvas.getContext("2d");
+			ctx.fillStyle = "#000000";
+			ctx.fillRect(0,0,canvas.width,canvas.height);
+			ctx.fillStyle = "#bbc1cc";
+			ctx.fillRect(10,10,1260,700);
+			createFood();
+			var xPos = (canvas.width/2);
+			var yPos = (canvas.height/2);
+			var xDir = 0;
+			var yDir = 10;
+			var interval = 100;
+			var timer = setInterval(drawDot, interval);
+			document.addEventListener("keydown", keyDownTextField, false);
+		</script>
+	</body>
+</html>
