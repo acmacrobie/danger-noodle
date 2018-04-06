@@ -1,0 +1,18 @@
+var snek = [];
+var snekLength = 3;
+var foodX;
+var foodY;
+var xDir = 0;
+var yDir = 1;
+var interval = 100;
+var timer;
+var areaWidth = 30;
+var areaHeight = 30;
+var gridPixels = 20;
+var backgroundColor = "#bbc1cc";
+var snekColor = "#000000";
+var foodColor = "#FF0000";
+var xPos = areaWidth / 2;
+var yPos = areaHeight / 2;
+var growLength = 1;
+var speedDelta = 5;
