@@ -24,9 +24,11 @@ function grow() {
 }
 
 function setSpeed() {
-	clearInterval(timer);
-	interval -= speedDelta;
-	timer = setInterval(turn, interval);
+	if (interval > speedCap) {
+		clearInterval(timer);
+		interval -= speedDelta;
+		timer = setInterval(turn, interval);
+	}
 }
 
 function checkFood() {
@@ -34,6 +36,7 @@ function checkFood() {
 		grow();
 		createFood();
 		setSpeed();
+		score += scoreIncrease;
 	}
 }
 
