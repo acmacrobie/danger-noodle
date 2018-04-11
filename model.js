@@ -21,3 +21,4 @@ var score = 0;
 var scoreIncrease = 10;
 var scoreColor = "green";
 var scoreFont = "30px Arial";
+var myAudio1;

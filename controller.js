@@ -1,5 +1,6 @@
 function gameOver() {
 	clearInterval(timer);
+	myAudio1.play();
 	alert ("Game Over");
 }
 
@@ -108,8 +109,39 @@ function handleKeypress(e) {
 			}
 
 			break;
+
+		case 87:
+			if (yDir == 0) {
+				yPos -= 1;
+			}
+
+			break;
+
+		case 83:
+			if (yDir == 0) {
+				yPos += 1;
+			}
+
+			break;
+
+		case 65:
+			if (xDir == 0) {
+				xPos -= 1
+			}
+
+			break;
+
+		case 68:
+			if (xDir == 0) {
+				xPos += 1
+			}
+
+			break;
 	}
 }
+
+myAudio1 = document.createElement('audio');
+myAudio1.src = 'Loud_Nigra.mp3'
 
 document.addEventListener("keydown", handleKeypress, false);
 
