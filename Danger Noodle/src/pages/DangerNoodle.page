@@ -1,0 +1,30 @@
+<apex:page controller="DangerNoodleController" showHeader="true" sidebar="true">
+	<apex:includeScript value="{!$Resource.model}" />
+	<apex:includeScript value="{!$Resource.view}" />
+	<apex:includeScript value="{!$Resource.controller}" />
+
+	<apex:form>
+		<apex:actionFunction action="{!saveScore}" name="saveScore" rerender="theScores">
+			<apex:param name="value" assignTo="{!scoreValue}" value="" />
+			<apex:param name="name" assignTo="{!scoreName}" value="" />
+		</apex:actionFunction>
+
+		<apex:pageBlock>
+			<canvas id="gameCanvas"></canvas>
+			<button id='btn' onclick="initModel(); startGame(); return false;">Start</button>
+
+			<apex:pageBlockTable id="theScores" value="{!scores}" var="score">
+				<apex:column value="{!score.Score_Value__c}" />
+				<apex:column value="{!score.Score_Name__c}" />
+			</apex:pageBlockTable>
+		</apex:pageBlock>
+	</apex:form>
+
+	<script>
+		initModel();
+		initView();
+
+		draw();
+	</script>
+
+</apex:page>

@@ -1,0 +1,17 @@
+{
+    "projectName": "Danger Noodle",
+    "username": "acmacrobie@gmail.com.dn",
+    "id": "88d43170-3db6-11e8-a3ab-b91938d0af0d",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://na59.salesforce.com",
+    "workspace": "C:\\Users\\ceruv\\Desktop\\DangerNoodle",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "StaticResource"
+    ]
+}

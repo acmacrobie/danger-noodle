@@ -1,7 +1,10 @@
 function gameOver() {
 	clearInterval(timer);
 	myAudio1.play();
-	alert ("Game Over");
+	
+	var scoreName = prompt("Game Over. Please enter your name.");
+
+	saveScore(score, scoreName);
 }
 
 function checkWalls() {
@@ -141,9 +144,6 @@ function handleKeypress(e) {
 }
 
 function startGame() {
-	initModel();
-	initView();
-	
 	myAudio1 = document.createElement('audio');
 	myAudio1.src = 'Loud_Nigra.mp3'
 
