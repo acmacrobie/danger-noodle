@@ -3,6 +3,35 @@
 	<apex:includeScript value="{!$Resource.view}" />
 	<apex:includeScript value="{!$Resource.controller}" />
 
+	<style>
+		.column {
+			float: left;
+		}
+
+		.left {
+			width: 25%;
+		}
+
+		.center {
+			width: 50%;
+			text-align: center;
+		}
+
+		.right {
+			width: 25%;
+		}
+
+		.row {
+			width: 100%;
+		}
+
+		.row:after {
+    		content: "";
+    		display: table;
+    		clear: both;
+		}
+	</style>
+
 	<audio src="{!$Resource.LoudScream}" id="LoudScream" />
 
 	<apex:form>
@@ -11,17 +40,31 @@
 			<apex:param name="name" assignTo="{!scoreName}" value="" />
 		</apex:actionFunction>
 
-		<canvas id="gameCanvas"></canvas>
-		<button id='btn' onclick="initModel(); startGame(); return false;">Start</button>
+		<div class="row">
+			<div class="column left">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+			</div>
 
-		<table>
-			<apex:repeat id="theScores" value="{!scores}" var="score">
-				<tr>
-					<td>{!score.Score_Value__c}</td>
-					<td>{!score.Score_Name__c}</td>
-				</tr>
-			</apex:repeat>
-		</table>
+			<div class="column center">
+				<canvas id="gameCanvas"></canvas>
+				<button id='btn' onclick="initModel(); startGame(); return false;">Start</button>
+			</div>
+
+			<div class="column right">
+				<table>
+					<tr>
+						<th>Score</th>
+						<th>Name</th>
+					</tr>
+					<apex:repeat id="theScores" value="{!scores}" var="score">
+						<tr>
+							<td>{!score.Score_Value__c}</td>
+							<td>{!score.Score_Name__c}</td>
+						</tr>
+					</apex:repeat>
+				</table>
+			</div>
+		</div>
 	</apex:form>
 
 	<script>
