@@ -144,8 +144,7 @@ function handleKeypress(e) {
 }
 
 function startGame() {
-	myAudio1 = document.createElement('audio');
-	myAudio1.src = 'Loud_Nigra.mp3'
+	myAudio1 = document.getElementById("LoudScream");
 
 	document.addEventListener("keydown", handleKeypress, false);
 

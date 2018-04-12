@@ -9,7 +9,7 @@ public with sharing class DangerNoodleController {
 	}
 
 	public void init() {
-		scores = [select Score_Value__c, Score_Name__c from Score__c order by Score_Value__c desc];
+		scores = [select Score_Value__c, Score_Name__c from Score__c order by Score_Value__c desc limit 10];
 	}
 
 	public void saveScore() {
