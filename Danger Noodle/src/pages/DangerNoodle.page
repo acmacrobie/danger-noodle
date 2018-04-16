@@ -4,32 +4,111 @@
 	<apex:includeScript value="{!$Resource.controller}" />
 
 	<style>
+		body {
+			font-family: "Helvetica";
+			background-color: #253237;
+			color: #CDDDDD;
+			text-shadow:
+		        0.05em 0 black,
+		        0 0.05em black,
+		        -0.05em 0 black,
+		        0 -0.05em black,
+		        -0.05em -0.05em black,
+		        -0.05em 0.05em black,
+		        0.05em -0.05em black,
+		        0.05em 0.05em black; 
+		}
+
+		.gameTitle {
+			text-align: center;
+			font-size: 50pt;
+			background-color: #133C55;
+			padding: 15px;
+			border-radius: 10px;
+			margin: 20px;
+			font-weight: bold;
+		}
+
 		.column {
-			float: left;
+		}
+
+		.column h1 {
+			text-align: center;
+			font-size: 40px;
 		}
 
 		.left {
-			width: 25%;
+			background-color: #3A4E48;
+		    padding: 20px;
+		    border-radius: 10px;
+		    margin: 20px;
+		    margin-top: 0px;
+		    flex: 1;
 		}
 
 		.center {
-			width: 50%;
 			text-align: center;
+			flex: 1;
+		    padding: 20px;
+		    margin: 20px;
+		    margin-top: 0px;
 		}
 
 		.right {
-			width: 25%;
+			background-color: #3A4E48;
+		    padding: 20px;
+		    border-radius: 10px;
+		    margin: 20px;
+		    margin-top: 0px;
+			flex: 1;
+		}
+
+		.highScores table {
+			width: 75%;
+			text-align: center;
+			margin: 0 auto;
+			border-spacing: 10px;
 		}
 
 		.row {
 			width: 100%;
+			display: flex;
 		}
 
-		.row:after {
-    		content: "";
-    		display: table;
-    		clear: both;
+		.startButton {
+			margin: 20px;
 		}
+
+		.startButton button {
+			width: 400px;
+			height: 30px;
+		}
+
+		#gameCanvas {
+			border: 3px black solid;
+		}
+
+		.highScores {
+			text-align: center;
+		}
+
+		.instructions {
+			list-style-position: inside;
+		}
+
+		.controlInstructions {
+			text-decoration: underline;
+		}
+
+		.howToPlay {
+			text-align: center;
+		}
+
+		th {
+			text-decoration: underline;
+			font-size: 20px;
+		}
+
 	</style>
 
 	<audio src="{!$Resource.LoudScream}" id="LoudScream" />
@@ -40,29 +119,62 @@
 			<apex:param name="name" assignTo="{!scoreName}" value="" />
 		</apex:actionFunction>
 
+		<div class="gameTitle">
+			Danger Noodle
+		</div>
+
 		<div class="row">
 			<div class="column left">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+				<h1>Instructions</h1>
+				<p class="controlInstructions">Controls</p>
+				<ul class="instructions">
+					<li>Up Arrow - Move up</li>
+					<li>Down Arrow - Move down</li>
+					<li>Left Arrow - Move left</li>
+					<li>Right Arrow - Move right</li>
+					<li>Strafing - Only in directions perpendicular to your course.</li>
+					<ul>	
+						<li>	W - Strafe up</li>
+						<li>	S - Strafe down</li>
+						<li>	A - Strafe left</li>
+						<li>	D - Strafe right</li>
+					</ul>
+				</ul>
+				<p class="controlInstructions">How to Play</p>
+				<p class="howToPlay"></p>
+				<ul class="instructions>">
+					<li>Eat the red pellets to increase your length, speed, and score.</li>
+					<li>Avoid colliding with the walls or yourself, or suffer the consequences.</li>
+				</ul>
 			</div>
 
 			<div class="column center">
-				<canvas id="gameCanvas"></canvas>
-				<button id='btn' onclick="initModel(); startGame(); return false;">Start</button>
+				<div>
+					<canvas id="gameCanvas"></canvas>
+				</div>
+				<div class="startButton">
+					<button id='btn' onclick="initModel(); startGame(); return false;">Start</button>
+				</div>
 			</div>
 
 			<div class="column right">
-				<table>
-					<tr>
-						<th>Score</th>
-						<th>Name</th>
-					</tr>
-					<apex:repeat id="theScores" value="{!scores}" var="score">
-						<tr>
-							<td>{!score.Score_Value__c}</td>
-							<td>{!score.Score_Name__c}</td>
-						</tr>
-					</apex:repeat>
-				</table>
+				<h1>High Scores</h1>
+				<apex:outputPanel layout="none" id="theScores">	
+					<div class="highScores">
+						<table>
+							<tr>
+								<th>Score</th>
+								<th>Name</th>
+							</tr>
+							<apex:repeat value="{!scores}" var="score">
+								<tr>
+									<td>{!score.Score_Value__c}</td>
+									<td>{!score.Score_Name__c}</td>
+								</tr>
+							</apex:repeat>
+						</table>
+					</div>
+				</apex:outputPanel>
 			</div>
 		</div>
 	</apex:form>
