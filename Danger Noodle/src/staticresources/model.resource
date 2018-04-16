@@ -19,10 +19,12 @@ var xDir;
 var yDir;
 var interval;
 var timer;
+var drawTimer;
 var xPos;
 var yPos;
 var score;
 var myAudio1;
+var isExploding;
 
 function initModel() {
 	snekLength = 3;
@@ -33,4 +35,5 @@ function initModel() {
 	xPos = areaWidth / 2;
 	yPos = areaHeight / 2;
 	score = 0;
+	isExploding = false;
 }

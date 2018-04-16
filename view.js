@@ -1,5 +1,6 @@
 var canvas;
 var ctx;
+//yee boi
 
 function initView() {
 	canvas = document.getElementById("gameCanvas");

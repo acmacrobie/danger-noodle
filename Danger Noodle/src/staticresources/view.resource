@@ -32,4 +32,9 @@ function draw() {
 	ctx.font = scoreFont;
 	ctx.fillStyle = scoreColor;
 	ctx.fillText(score,canvas.width / 2, 50);
+
+	if (isExploding) {
+		var sprite = spriter.getSprite("splode");
+		ctx.drawImage(sprite.image,sprite.x,sprite.y,sprite.width,sprite.height,xPos*gridPixels+(gridPixels/2)-(sprite.width/2),yPos*gridPixels+(gridPixels/2)-(sprite.height/2),sprite.width,sprite.height);
+	}
 }

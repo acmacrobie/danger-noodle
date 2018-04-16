@@ -1,4 +1,6 @@
 function gameOver() {
+	isExploding = true;
+
 	clearInterval(timer);
 	myAudio1.play();
 	
@@ -76,7 +78,6 @@ function turn() {
 
 	storeLocation();
 
-	draw();
 }
 
 function handleKeypress(e) {
@@ -151,4 +152,7 @@ function startGame() {
 	createFood();
 
 	timer = setInterval(turn, interval);
+
+	drawTimer = setInterval(draw, 30);
 }
+

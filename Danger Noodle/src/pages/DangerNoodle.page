@@ -1,4 +1,5 @@
 <apex:page controller="DangerNoodleController" showHeader="false" sidebar="false" standardStylesheets="false">
+	<apex:includeScript value="{!$Resource.SpriterJS}" />
 	<apex:includeScript value="{!$Resource.model}" />
 	<apex:includeScript value="{!$Resource.view}" />
 	<apex:includeScript value="{!$Resource.controller}" />
@@ -182,6 +183,23 @@
 	<script>
 		initModel();
 		initView();
+
+		var gameSprites = [
+			{
+				"name" : "splode",
+			    "image" : "{!$Resource.ExplosionSpritesheet}",
+			    "width" : 192,
+			    "height" : 195,
+			    "mWidth" : 4800,
+			    "mHeight" : 195,
+			    "timing" : 30
+			}
+		];
+
+		var spriter = new Spriter();
+		spriter.loadSprites(gameSprites);
+
+		spriter.animate("splode", true);
 
 		draw();
 	</script>

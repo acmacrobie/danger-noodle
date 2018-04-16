@@ -8,7 +8,7 @@
         "id": "081f4000000ZoT5AAK",
         "lastModifiedById": "005f4000000Y5YeAAK",
         "lastModifiedByName": "Andrew MacRobie",
-        "lastModifiedDate": "2018-04-13T18:22:08.000Z",
+        "lastModifiedDate": "2018-04-16T21:08:33.000Z",
         "manageableState": "unmanaged",
         "type": "StaticResource",
         "mmState": "clean"
@@ -22,7 +22,7 @@
         "id": "081f4000000ZoTFAA0",
         "lastModifiedById": "005f4000000Y5YeAAK",
         "lastModifiedByName": "Andrew MacRobie",
-        "lastModifiedDate": "2018-04-12T20:16:17.000Z",
+        "lastModifiedDate": "2018-04-16T21:09:41.000Z",
         "manageableState": "unmanaged",
         "type": "StaticResource",
         "mmState": "clean"
@@ -36,7 +36,7 @@
         "id": "081f4000000ZoTAAA0",
         "lastModifiedById": "005f4000000Y5YeAAK",
         "lastModifiedByName": "Andrew MacRobie",
-        "lastModifiedDate": "2018-04-11T19:08:18.000Z",
+        "lastModifiedDate": "2018-04-16T21:20:23.000Z",
         "manageableState": "unmanaged",
         "type": "StaticResource",
         "mmState": "clean"
@@ -48,7 +48,7 @@
         "createdById": "005f4000000Y5YeAAK",
         "namespacePrefix": null,
         "lastModifiedById": "005f4000000Y5YeAAK",
-        "lastModifiedDate": "2018-04-13T20:19:41.000+0000",
+        "lastModifiedDate": "2018-04-16T21:11:58.000+0000",
         "fullName": "DangerNoodle",
         "fileName": "unpackaged/pages/DangerNoodle.page",
         "createdByName": "Andrew MacRobie",
@@ -71,6 +71,62 @@
         "lastModifiedByName": "Andrew MacRobie",
         "manageableState": "unmanaged",
         "type": "ApexClass",
+        "mmState": "clean"
+    },
+    "LoudScream.resource": {
+        "createdById": "005f4000000Y5YeAAK",
+        "createdByName": "Andrew MacRobie",
+        "createdDate": "2018-04-12T20:12:30.000Z",
+        "fileName": "unpackaged/staticresources/LoudScream.resource",
+        "fullName": "LoudScream",
+        "id": "081f4000000ZuKUAA0",
+        "lastModifiedById": "005f4000000Y5YeAAK",
+        "lastModifiedByName": "Andrew MacRobie",
+        "lastModifiedDate": "2018-04-12T20:12:30.000Z",
+        "manageableState": "unmanaged",
+        "type": "StaticResource",
+        "mmState": "clean"
+    },
+    "SiteSamples.resource": {
+        "createdById": "005f4000000Y5YeAAK",
+        "createdByName": "Andrew MacRobie",
+        "createdDate": "2018-04-12T20:22:41.000Z",
+        "fileName": "unpackaged/staticresources/SiteSamples.resource",
+        "fullName": "SiteSamples",
+        "id": "081f4000000ZuL3AAK",
+        "lastModifiedById": "005f4000000Y5YeAAK",
+        "lastModifiedByName": "Andrew MacRobie",
+        "lastModifiedDate": "2018-04-12T20:22:41.000Z",
+        "manageableState": "unmanaged",
+        "type": "StaticResource",
+        "mmState": "clean"
+    },
+    "SpriterJS.resource": {
+        "createdById": "005f4000000Y5YeAAK",
+        "createdByName": "Andrew MacRobie",
+        "createdDate": "2018-04-16T19:24:18.000Z",
+        "fileName": "unpackaged/staticresources/SpriterJS.resource",
+        "fullName": "SpriterJS",
+        "id": "081f4000000S8mWAAS",
+        "lastModifiedById": "005f4000000Y5YeAAK",
+        "lastModifiedByName": "Andrew MacRobie",
+        "lastModifiedDate": "2018-04-16T19:24:18.000Z",
+        "manageableState": "unmanaged",
+        "type": "StaticResource",
+        "mmState": "clean"
+    },
+    "ExplosionSpritesheet.resource": {
+        "createdById": "005f4000000Y5YeAAK",
+        "createdByName": "Andrew MacRobie",
+        "createdDate": "2018-04-16T19:27:58.000Z",
+        "fileName": "unpackaged/staticresources/ExplosionSpritesheet.resource",
+        "fullName": "ExplosionSpritesheet",
+        "id": "081f4000000S8mqAAC",
+        "lastModifiedById": "005f4000000Y5YeAAK",
+        "lastModifiedByName": "Andrew MacRobie",
+        "lastModifiedDate": "2018-04-16T19:27:58.000Z",
+        "manageableState": "unmanaged",
+        "type": "StaticResource",
         "mmState": "clean"
     }
 }
